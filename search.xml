@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>我的第一个博客</title>
-    <url>/2024/01/31/hello/</url>
-    <content><![CDATA[<h3 id="这是我的第一个博客，我将在这里分享我的相关内容"><a href="#这是我的第一个博客，我将在这里分享我的相关内容" class="headerlink" title="这是我的第一个博客，我将在这里分享我的相关内容"></a>这是我的第一个博客，我将在这里分享我的相关内容</h3>]]></content>
-  </entry>
-  <entry>
     <title>线段树的一些trick例题</title>
     <url>/2024/02/03/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9Btrick%E4%BE%8B%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="XOR-on-Segment"><a href="#XOR-on-Segment" class="headerlink" title="XOR on Segment"></a>XOR on Segment</h2><p><a href="https://www.luogu.com.cn/problem/CF242E">https://www.luogu.com.cn/problem/CF242E</a></p>
-<p><img src="D:\Typora\picture\image-20230821145204412-1706948779867-1.png" alt="image-20230821145204412"></p>
+    <content><![CDATA[<p>以下是我根据洛谷limit的线段树题单中挑了一部分有趣的题来做，一些trick还是比较有意思的。<br> <span id="more"></span></p>
+<h2 id="XOR-on-Segment"><a href="#XOR-on-Segment" class="headerlink" title="XOR on Segment"></a>XOR on Segment</h2><p><a href="https://www.luogu.com.cn/problem/CF242E">https://www.luogu.com.cn/problem/CF242E</a></p>
+<p><img src="/2024/02/03/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9Btrick%E4%BE%8B%E9%A2%98/Typora\picture\image-20230821145204412-1706948779867-1.png" alt="image-20230821145204412"></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>维护二进制下各位区间内1的数量，因为当对于一个区间都异或x时，若x对应位为1，则区间内1的数量不变；若对应位为0，则区间内1的数量为区间长度-区间内1的数量（即取反），区间和即为各位1的数量并转为十进制。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void settag(int id,tag t)&#123;</span><br><span class="line">	node[id].t=node[id].t+t;</span><br><span class="line">	for(int i=0;i&lt;=20;++i)&#123;</span><br><span class="line">        int tt=(t.opt)&gt;&gt;i&amp;1;</span><br><span class="line">        node[id].val.cnt[i]=(tt?node[id].sz-node[id].val.cnt[i]:node[id].val.cnt[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="New-Year-Tree"><a href="#New-Year-Tree" class="headerlink" title="New Year Tree"></a>New Year Tree</h2><p><a href="https://www.luogu.com.cn/problem/CF620E">https://www.luogu.com.cn/problem/CF620E</a></p>
-<p><img src="D:\Typora\picture\image-20230821145746007-1706948779868-2.png" alt="image-20230821145746007"></p>
+<p><img src="/2024/02/03/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9Btrick%E4%BE%8B%E9%A2%98/Typora\picture\image-20230821145746007-1706948779868-2.png" alt="image-20230821145746007"></p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>注意到颜色只有60种，可以通过bitset来存储颜色，树剖实现整体框架</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void settag(int id,int t)&#123;</span><br><span class="line">    node[id].tag=t;</span><br><span class="line">    node[id].val.bt.reset();</span><br><span class="line">    node[id].val.bt.set(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -31,7 +27,7 @@
 <h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>维护区间各字母的数量，暴力安排每一步操作<br>容易卡常QAQ</p>
 <h2 id="Nastya-and-King-Shamans"><a href="#Nastya-and-King-Shamans" class="headerlink" title="Nastya and King-Shamans"></a>Nastya and King-Shamans</h2><p><a href="https://www.luogu.com.cn/problem/CF992E">https://www.luogu.com.cn/problem/CF992E</a></p>
 <p>给定一个序列 $a_i$，记其前缀和序列为 $s_i$，有$q$ 个询问，每次单点修改，询问是否存在一个$i$ 满足 $a_i&#x3D;s_{i-1}$ ，有多解输出任意一个，无解输出 −1 。</p>
-<p><img src="D:\Typora\picture\image-20230821151802225-1706948779868-3.png" alt="image-20230821151802225"></p>
+<p><img src="/2024/02/03/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E4%B8%80%E4%BA%9Btrick%E4%BE%8B%E9%A2%98/Typora\picture\image-20230821151802225-1706948779868-3.png" alt="image-20230821151802225"></p>
 <h2 id="One-Occurrence"><a href="#One-Occurrence" class="headerlink" title="One Occurrence"></a>One Occurrence</h2><p><a href="https://www.luogu.com.cn/problem/CF1000F">https://www.luogu.com.cn/problem/CF1000F</a></p>
 <p>给定一个长度为$n$序列,$m$个询问，每次询问给定一个区间$[l,r]$，如果这个区间里存在只出现一次的数，输出这个数（如果有多个就输出任意一个），没有就输出0，$n,m&lt;&#x3D;5∗10^5$ </p>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>从左往右扫，val存储对应位置之前出现的位置中最靠前的值以及对应的数。</p>
@@ -43,6 +39,11 @@
       <tags>
         <tag>数据结构</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>我的第一个博客</title>
+    <url>/2024/01/31/hello/</url>
+    <content><![CDATA[<h3 id="这是我的第一个博客，我将在这里分享我的相关内容"><a href="#这是我的第一个博客，我将在这里分享我的相关内容" class="headerlink" title="这是我的第一个博客，我将在这里分享我的相关内容"></a>这是我的第一个博客，我将在这里分享我的相关内容</h3>]]></content>
   </entry>
   <entry>
     <title>我的线段树模板</title>
