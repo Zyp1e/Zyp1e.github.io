@@ -264,27 +264,23 @@
 <p><img src="/2024/02/03/segment-tree-trick/image-20230821145204412-1706948779867-1.png" alt="Bshu"></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>维护二进制下各位区间内1的数量，因为当对于一个区间都异或x时，若x对应位为1，则区间内1的数量不变；若对应位为0，则区间内1的数量为区间长度-区间内1的数量（即取反），区间和即为各位1的数量并转为十进制。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void settag(int id,tag t)&#123;</span><br><span class="line">	node[id].t=node[id].t+t;</span><br><span class="line">	for(int i=0;i&lt;=20;++i)&#123;</span><br><span class="line">        int tt=(t.opt)&gt;&gt;i&amp;1;</span><br><span class="line">        node[id].val.cnt[i]=(tt?node[id].sz-node[id].val.cnt[i]:node[id].val.cnt[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="New-Year-Tree"><a href="#New-Year-Tree" class="headerlink" title="New Year Tree"></a>New Year Tree</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF620E">https://www.luogu.com.cn/problem/CF620E</a><br><img src="/2024/02/03/segment-tree-trick/image-20230821145746007-1706948779868-2.png" alt="Bshu"></p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>注意到颜色只有60种，可以通过bitset来存储颜色，树剖实现整体框架</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void settag(int id,int t)&#123;</span><br><span class="line">    node[id].tag=t;</span><br><span class="line">    node[id].val.bt.reset();</span><br><span class="line">    node[id].val.bt.set(t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h2 id="The-Child-and-Sequence"><a href="#The-Child-and-Sequence" class="headerlink" title="The Child and Sequence"></a>The Child and Sequence</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF438D">https://www.luogu.com.cn/problem/CF438D</a></p>
 <p>区间取模</p>
 <h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>暴力修改到结点，同时维护区间最大值，若最大值小于模数则停止递归</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(node[id].val.maxn&lt;d)return;</span><br></pre></td></tr></table></figure>
-
 <h3 id="引申"><a href="#引申" class="headerlink" title="引申"></a>引申</h3><p>区间求开方</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(node[id].val.sum==node[id].sz)return;</span><br></pre></td></tr></table></figure>
-
 <h2 id="TorCoder"><a href="#TorCoder" class="headerlink" title="TorCoder"></a>TorCoder</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF240F">https://www.luogu.com.cn/problem/CF240F</a></p>
 <p>给定一个长为$n$的由a到z组成的字符串,有$m$次操作，每次操作将$[l,r]$这些位置的字符进行重排，得到字典序最小的回文字符串，如果无法操作就不进行。<br>求$m$次操作后的字符串。</p>
 <h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><p>维护区间各字母的数量，暴力安排每一步操作<br>容易卡常QAQ</p>
 <h2 id="Nastya-and-King-Shamans"><a href="#Nastya-and-King-Shamans" class="headerlink" title="Nastya and King-Shamans"></a>Nastya and King-Shamans</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF992E">https://www.luogu.com.cn/problem/CF992E</a></p>
-<p>给定一个序列 $a_i$，记其前缀和序列为 $s_i$，有$q$ 个询问，每次单点修改，询问是否存在一个$i$ 满足 $a_i&#x3D;s_{i-1}$ ，有多解输出任意一个，无解输出 −1 。</p>
+<p>给定一个序列 $a_i$，记其前缀和序列为 $s_i$，有$q$ 个询问，每次单点修改，询问是否存在一个$i$ 满足 $a_i=s_{i-1}$ ，有多解输出任意一个，无解输出 −1 。</p>
 <p><img src="/2024/02/03/segment-tree-trick/image-20230821151802225-1706948779868-3.png" alt="Bshu"></p>
 <h2 id="One-Occurrence"><a href="#One-Occurrence" class="headerlink" title="One Occurrence"></a>One Occurrence</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1000F">https://www.luogu.com.cn/problem/CF1000F</a></p>
-<p>给定一个长度为$n$序列,$m$个询问，每次询问给定一个区间$[l,r]$，如果这个区间里存在只出现一次的数，输出这个数（如果有多个就输出任意一个），没有就输出0，$n,m&lt;&#x3D;5∗10^5$ </p>
+<p>给定一个长度为$n$序列,$m$个询问，每次询问给定一个区间$[l,r]$，如果这个区间里存在只出现一次的数，输出这个数（如果有多个就输出任意一个），没有就输出0，$n,m&lt;=5∗10^5$ </p>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>从左往右扫，val存储对应位置之前出现的位置中最靠前的值以及对应的数。</p>
 <h2 id="Boring-Queries"><a href="#Boring-Queries" class="headerlink" title="Boring Queries"></a>Boring Queries</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1422F">https://www.luogu.com.cn/problem/CF1422F</a></p>
 <p>在线求给定区间的lcm</p>
