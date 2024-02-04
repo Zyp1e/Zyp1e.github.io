@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、课题理解与分析：所有记分点要求内容均已实现。 根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。 对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人应用">
+<meta property="og:url" content="http://example.com/2024/02/04/personal-assistant-app/index.html">
+<meta property="og:site_name" content="vegeone">
+<meta property="og:description" content="一、课题理解与分析：所有记分点要求内容均已实现。 根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。 对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/20240204154558.png">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps2.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps3.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps4.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps5.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps6.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps7.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps8.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps9.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps10.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps11.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps12.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps13.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps14.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps15.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps16.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps17.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps18.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps19.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps20.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps21.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps22.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps23.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps24.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps25.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps26.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps27.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps28.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps29.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps30.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps31.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps32.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps33.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps34.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps35.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps36.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps37.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps38.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps39.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps40.jpg">
+<meta property="og:image" content="http://example.com/2024/02/04/personal-assistant-app/wps41.jpg">
+<meta property="article:published_time" content="2024-02-04T07:44:42.000Z">
+<meta property="article:modified_time" content="2024-02-04T08:45:22.714Z">
+<meta property="article:author" content="笙殇舊夢">
+<meta property="article:tag" content="移动应用开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/04/personal-assistant-app/20240204154558.png">
+
+<link rel="canonical" href="http://example.com/2024/02/04/personal-assistant-app/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>个人应用 | vegeone</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">vegeone</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/04/personal-assistant-app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="笙殇舊夢">
+      <meta itemprop="description" content="阿巴阿巴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="vegeone">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          个人应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-02-04 15:44:42 / 修改时间：16:45:22" itemprop="dateCreated datePublished" datetime="2024-02-04T15:44:42+08:00">2024-02-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">移动应用基础</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一、课题理解与分析："><a href="#一、课题理解与分析：" class="headerlink" title="一、课题理解与分析："></a>一、课题理解与分析：</h1><p><img src="/2024/02/04/personal-assistant-app/20240204154558.png" alt="Bshu"><br><strong>所有记分点要求内容均已实现。</strong></p>
+<p>根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。</p>
+<p>对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执行，例如第二章的界面跳转、第三章的recycleview、fab、menu等、第五章的通知提醒等。<br>文件链接在文末<br> <span id="more"></span></p>
+<h1 id="二、项目结构"><a href="#二、项目结构" class="headerlink" title="二、项目结构"></a>二、项目结构</h1><p>├── src </p>
+<p>│ ├── main</p>
+<p>│ │ ├── java/com/example/personalassistant </p>
+<p>│ │ │ ├── MainActivity.java //实现界面设计</p>
+<p>│ │ │ ├── MemoActivity.java </p>
+<p>│ │ │ ├── TodoActivity.java </p>
+<p>│ │ │ ├── ExpenseActivity.java</p>
+<p>│ │ │ ├── SettingsActivity.java</p>
+<p>│ │ │ ├── MemoAdapter.java //适配器，实现与recycleview的绑定</p>
+<p>│ │ │ ├── TodoAdapter.java </p>
+<p>│ │ │ ├── ExpenseAdapter.java </p>
+<p>│ │ │ ├── Memo.java //实现基本类的设计</p>
+<p>│ │ │ ├── Todo.java </p>
+<p>│ │ │ ├── Expense.java </p>
+<p>│ │ │ ├── MemoDatabaseHelper.java //数据库相关，实现数据存储以及处理</p>
+<p>│ │ │ ├── TodoDatabaseHelper.java </p>
+<p>│ │ │ ├── ExpenseDatabaseHelper.java </p>
+<p>│ │ │ ├── AlarmReceiver.java //实现接收广播并发送通知</p>
+<p>│ │ │ ├── DateTimeUtils.java//实现时间戳与标准时间格式的转化</p>
+<p>│ │ │ ├── TimeRange.java //enum类，存取TODAY,MONTH,YEAR三个宏</p>
+<p>│ │ ├── res </p>
+<p>│ │ │ ├── layout </p>
+<p>│ │ │ │ │ ├── activity_main.xml //界面布局设计</p>
+<p>│ │ │ │ │ ├── activity_memo.xml </p>
+<p>│ │ │ │ │ ├── activity_todo.xml </p>
+<p>│ │ │ │ │ ├── activity_expense.xml </p>
+<p>│ │ │ │ │ ├── activity_settings.xml </p>
+<p>│ │ │ │ │ ├── memo_list_item.xml //recycleview面板上每个item的内容显示设计</p>
+<p>│ │ │ │ │ ├── todo_list_item.xml </p>
+<p>│ │ │ │ │ ├── expense_list_item.xml </p>
+<p>│ │ │ │ │ ├── popup_edit_expense.xml //实现添加、修改、删除的popupwindow界面设计</p>
+<p>│ │ │ │ │ ├── popup_edit_memo.xml</p>
+<p>│ │ │ │ │ ├── popup_edit_todo.xml</p>
+<p>│ │ │ │ ├── menu </p>
+<p>│ │ │ │ │ ├── menu_main.xml //menu菜单设计</p>
+<p>│ │ │ │ │ ├── menu_memo.xml </p>
+<p>│ │ │ │ │ ├── menu_todo.xml </p>
+<p>│ │ │ │ │ ├── menu_expense.xml </p>
+<p>│ │ │ │ ├── drawable </p>
+<p>│ │ │ │ │ ├── oip.jpg </p>
+<p>│ │ │ │ │ ├── raa.jpg </p>
+<p>│ │ │ │ │ ├── ic_add </p>
+<p>│ │ │ │ │ ├── ic_save </p>
+<p>│ │ │ │ │ ├── ic_notification</p>
+<p>│ │ │ │ ├── values </p>
+<p>│ │ │ │ │ ├── strings.xml</p>
+<p>│ │ │ │ │ ├── arrays.xml</p>
+<p>│ │ │ │ ├── xml</p>
+<p>│ │ │ │ │ ├── preferences.xml//设置界面设计</p>
+<h1 id="三、内容介绍与遇到的问题等"><a href="#三、内容介绍与遇到的问题等" class="headerlink" title="三、内容介绍与遇到的问题等"></a>三、内容介绍与遇到的问题等</h1><h2 id="1、主屏幕（实现了记分点1的所有内容）"><a href="#1、主屏幕（实现了记分点1的所有内容）" class="headerlink" title="1、主屏幕（实现了记分点1的所有内容）"></a>1、主屏幕（实现了记分点1的所有内容）</h2><h3 id="（1）设计思路"><a href="#（1）设计思路" class="headerlink" title="（1）设计思路"></a>（1）设计思路</h3><p>主要设计思路借鉴了第一次实验的实验内容，显示功能列表，实现设置屏幕。</p>
+<p>记分点1：显示功能清单，备忘录、待办事项、记账，点击后进入相应的功能页面。应用栏显示设置菜单。进入设置页面后，可以对各功能的分类等信息进行设置。</p>
+<p>主界面相关代码内容：</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps2.jpg" alt="Bshu"> </p>
+<p>设置界面设计内容：</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps3.jpg" alt="Bshu"> </p>
+<h3 id="（2）实验结果"><a href="#（2）实验结果" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>实现功能清单的显示以及设置界面屏幕</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps4.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps5.jpg" alt="Bshu"> </p>
+<h3 id="（3）操作步骤"><a href="#（3）操作步骤" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户可以可以直接按下对应界面的按钮直接进入该界面，用户可以通过主界面右上角菜单中的设置选项、或者主界面的设置按钮进入设置界面</p>
+<h3 id="（4）遇到的问题"><a href="#（4）遇到的问题" class="headerlink" title="（4）遇到的问题"></a>（4）遇到的问题</h3><p>问题：设置界面的显示存在问题。</p>
+<p>分析：通过最后一堂课了解到用preferences来进行界面设计。</p>
+<p>解决方案：用preference.xml来进行界面设计。</p>
+<h2 id="2、备忘录（实现了记分点2、3、4所有内容）"><a href="#2、备忘录（实现了记分点2、3、4所有内容）" class="headerlink" title="2、备忘录（实现了记分点2、3、4所有内容）"></a>2、备忘录（实现了记分点2、3、4所有内容）</h2><h3 id="（1）设计思路："><a href="#（1）设计思路：" class="headerlink" title="（1）设计思路："></a>（1）设计思路：</h3><p>主要设计思路借鉴了最后一次的实验内容，即通过fab向Recycleview控件中添加内容。分类功能默认实现，即进入界面后已经进行了分类，具有相同的标签的记录将相邻排列，并只显示该类第一条记录的标签。</p>
+<p>计分点2：显示备忘列表。可按创建时间、标题等对列表排序。</p>
+<p>在设计备忘录界面时，我选择使用RecyclerView来展示备忘录列表，并使用Toolbar搭配Menu菜单为用户提供了按创建时间和标题排序的功能。通过在 MemoActivity.java 中实现了排序的方法，用户可以方便地选择不同的排序方式。这样，用户可以根据自己的需求，轻松查看备忘录列表。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps6.jpg" alt="Bshu"> </p>
+<p>计分点3：支持添加、删除、修改备忘。</p>
+<p>我确保用户能够方便地进行备忘录的添加、删除和修改操作。通过弹出 PopupWindow，用户可以轻松输入或编辑备忘录的标题、内容和标签。保存时，我在 saveOrUpdateMemo 方法中判断备忘录是否为空，从而进行添加或更新的操作，并及时更新备忘录列表。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps7.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps8.jpg" alt="Bshu"> </p>
+<p>计分点4：支持分类和标签。支持按分类或标签筛选备忘。</p>
+<p>我在备忘录中新增了标签属性，并提供了按标签筛选备忘录的功能。通过在 MemoDatabaseHelper.java 中提供了获取所有标签和按标签筛选备忘录的方法。在 MemoActivity.java 中实现了显示对话框的方法，并通过选择标签来更新备忘录列表来进行筛选。</p>
+<p>备忘录默认实现分类，对于具有相同标签的记录，将会相邻排列，并只显示该类的第一条记录的标签值。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps9.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps10.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps11.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps12.jpg" alt="Bshu"> </p>
+<h3 id="（2）实现结果："><a href="#（2）实现结果：" class="headerlink" title="（2）实现结果："></a>（2）实现结果：</h3><p>①按下浮动按钮后，将会弹出一个窗口，用户可以在此弹出窗口输入标题、内容、标签，输入完毕后可以按下保存按钮进行保存，也可以通过按下返回按钮取消添加。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps13.jpg" alt="Bshu"> </p>
+<p>②在已有的备忘录记录当中，用户可以点击其中一条记录，来对该记录进行修改或者删除该记录。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps14.jpg" alt="Bshu"> </p>
+<p>③用户也可以通过按下筛选按钮，根据标签内容进行筛选，也可以通过按下清除筛选部分来取消筛选</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps15.jpg" alt="Bshu"> </p>
+<p>④用户可以在menu栏实现跳转设置界面、清空备忘录、排序等操作。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps16.jpg" alt="Bshu"> </p>
+<p>⑤退出应用重新打开后，之前的备忘录记录依旧能够保留。</p>
+<h3 id="（3）操作步骤："><a href="#（3）操作步骤：" class="headerlink" title="（3）操作步骤："></a>（3）操作步骤：</h3><p>用户打开备忘录界面后，可以按通过按下右下角的浮动按钮来添加记录，此时会显示一个popup窗口，你可以在该窗口输入相关信息并进行保存记录，此时删除按钮与返回按钮都表示取消保存记录。</p>
+<p>保存记录后该记录会显示在Recycleview当中，点击对应记录，你可以对该记录进行修改/删除/取消修改操作。</p>
+<p>按下筛选按钮，你可以根据具体的标签进行筛选。</p>
+<p>打开右上角的菜单栏，你可以选择清除记录/设置/按创建日期排序/按标题排序/按标签分类（该分类默认实现）。</p>
+<p>最后，用户可以按左上角的箭头返回至主界面。</p>
+<h3 id="（4）遇到的问题："><a href="#（4）遇到的问题：" class="headerlink" title="（4）遇到的问题："></a>（4）遇到的问题：</h3><p>①问题:日志结果表面数据库表 “memo” 中缺少 “tags” 列但是代码中已经添加了“tags”列。</p>
+<p>分析：由于在之前创建数据库时还没有开始做标签功能，导致数据库中缺少“tags”列，之后代码中添加了“tags”列但没有更新数据库，所以出现该问题。</p>
+<p>解决方案：由于数据库已经创建，我们需要处理数据库升级的情况。</p>
+<p>②问题：点击浮动按钮后，popupwindows只会闪动一下，并不会一直停留在屏幕上直到按下某个按钮。</p>
+<p>分析：按照原先代码的逻辑，将只在函数代码执行过后popup窗口就会消失，需要将该窗口的显示与消失定义在某个事件当中。</p>
+<p>解决方案：将 PopupWindow 的显示和隐藏放在按钮的点击事件中，并使用全局变量或其他方式来保存 PopupWindow 的实例</p>
+<p>③问题：按下Toolbar控件左边的返回箭头没有反应，无法退回至主界面</p>
+<p>分析：错误地将跳转至主界面事件放至menu的某个Item中</p>
+<p>解决方案：使用 toolbar.setNavigationOnClickListener 为返回箭头按钮设置了点击事件，点击时执行 goToMainActivity() 方法，实现了跳转至主界面的功能。</p>
+<h2 id="3、待办事项（实现了记分点5，6，7的所有内容）"><a href="#3、待办事项（实现了记分点5，6，7的所有内容）" class="headerlink" title="3、待办事项（实现了记分点5，6，7的所有内容）"></a>3、待办事项（实现了记分点5，6，7的所有内容）</h2><h3 id="（1）设计思路-1"><a href="#（1）设计思路-1" class="headerlink" title="（1）设计思路"></a>（1）设计思路</h3><p>大部分显示以及布局内容都是模仿备忘录界面实现，对于提醒部分，参考讲义第五章中的内容进行实现</p>
+<p>计分点5：显示待办清单。支持按类别、日期筛选。</p>
+<p>对于按种类筛选，将获取当前所有的种类内容，用户可以选择对应的种类</p>
+<p>对于按日期筛选，根据选择的日期，设置起始时间戳为该日期00：00：00，截止日期为第二天的00：00：00，筛选时间戳在此范围内的记录</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps17.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps18.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps19.jpg" alt="Bshu"> </p>
+<p>计分点6：添加、删除、修改待办事项。</p>
+<p>此处与备忘录的增删改部分相近，但是待办事项界面设计日期与时间，所以增加了TimePicker与datePickerDialog来输入时间与日期</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps20.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps21.jpg" alt="Bshu"> </p>
+<p>计分点7：支持提醒功能。提醒分单次和重复两种类型。</p>
+<p>此处sendNotification函数包括了讲义中的createNotification函数与handleNotification函数。</p>
+<p>由于使用重复提醒的函数为setInexactRepeating函数，所以重复提醒的第一次提醒时间会存在一定的延迟</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps22.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps23.jpg" alt="Bshu"> </p>
+<h3 id="（2）实验结果-1"><a href="#（2）实验结果-1" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>①界面整体布局，菜单内容</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps24.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps25.jpg" alt="Bshu"> </p>
+<p>②筛选实现部分</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps26.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps27.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps28.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps29.jpg" alt="Bshu">（选择12.25筛选后）</p>
+<p>③实现增删改部分，popup窗口内容，可以按下选择日期按钮显示日历，可以按下左下角的小键盘将钟表切换成直接输入时间。重复时间通过spinner来选择</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps30.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps31.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps32.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps33.jpg" alt="Bshu"> </p>
+<p>④提醒部分，显然可以上方有通知提醒，下方有toast显示，重复提醒第一次的提醒时间可能要延迟3-5min</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps34.jpg" alt="Bshu"> </p>
+<h3 id="（3）操作步骤-1"><a href="#（3）操作步骤-1" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户进入到待办事项界面后，用户可以按下右下角的“+”浮动按钮来添加待办事项记录，用户可以依次1、输入标题、种类、描述，然后可以点击“选择日期”按钮，2、在弹出的日历中选择日期（默认为当天），3、然后用户可以直接在钟表上选择具体时间，或者在左下角的键盘来输入具体的时间。4、然后用户可以选择是否进行重复提醒，并在spinner中选择重复提醒的间隔时间。</p>
+<p>同备忘录，用户可以直接点击某条记录来进行修改记录相关内容。</p>
+<p>用户可以按下toolbar中的筛选选项来进行标签筛选以及日期筛选，按下标签筛选后，用户可以选择某个标签进行筛选；按下日期筛选后，用户也可以选择某个日期来筛选出记录中年月日与该日期相同的项。两种筛选都可以清除筛选。</p>
+<p>用户可以通过右上角的菜单栏来进行清除所有待办事项记录/设置。</p>
+<p>用户会在每条记录设置的时间收到通知提醒，但如果是重复提醒，第一次提醒的时间会延迟3-5分钟，但是之后的间隔时间基本准时。</p>
+<p>最后，用户可以按左上角的箭头返回至主界面。</p>
+<h3 id="（4）遇到的问题-1"><a href="#（4）遇到的问题-1" class="headerlink" title="（4）遇到的问题"></a>（4）遇到的问题</h3><p>①问题：有没有什么方式可以使用户对于时间的输入更方便，以替代文字输入</p>
+<p>分析：如果存在日历以及钟表式的输入，可能更加直观与方便</p>
+<p>解决方案：对于日期选择，可以用DatePickerDialog，对于时间选择，可以用TimePicker控件。</p>
+<p>②问题：对于种类筛选能够正常执行，但是对于日期筛选无法执行。</p>
+<p>分析：通过日志，沿着操作步骤逐步排查问题，最后发现筛选列表加入的条件为符合种类筛选条件且不符合日期筛选条件</p>
+<p>解决方案：考虑到对于每种筛选方式，都要求另一种筛选方式不符合才行，可以对两种筛选方式的判断进行异或，实现只有两者的值不同时才可以进行筛选。（实际代码中对于两种情况直接进行罗列并用||连接）</p>
+<p>③问题：再增加提醒功能与重复提醒功能后，运行程序，应用一直闪退</p>
+<p>分析：通过日志的报错进行分析，找到错误对应的那一行，最后发现又是数据库生成的表（增加提醒功能前的表）不存在一些列。参考备忘录的方式，通过数据库升级来增加列，但是由于一些粗心错误，将一些变量加入到两个原来就存在的列中间，同时存在部分需要删除的变量，导致不能直接对尾部添加或单纯尾部添加并不能解决问题。</p>
+<p>解决方案：理论上可以直接查找表的结构，然后进行DROP部分变量，再增加部分变量即可。最后直接修改数据库名，直接新建了一个数据库的表。</p>
+<p>④问题：提醒功能始终无法实现。（实际解决过程中共发现三个问题）</p>
+<p>分析：根据日志进行问题排查，发现广播能够正常发送，但是AlarmReceiver始终无法正常接收广播。对于整个代码走了一遍发现是否提醒与是否添加重复提醒变量之间存在混淆。修改后还是无法正常接收提醒，经过相关文档查询，发现setRepeating函数具有一定的延时性，在经过几分钟的等待后，发现广播能够正常被接收（日志显示了接收报告），但是手机屏幕上并没有生成通知弹窗。经过一天的研究，最终发现问题在于虚拟手机上关掉了该软件的通知权限。</p>
+<p>解决方案：1、将是否提醒与是否添加重复提醒变量有关的函数进行调整，修改相关函数的参数名称以提高程序可读性。2、对于单次提醒采用setExactAndAllowWhileIdle实现准时提醒，但是重复提醒无法做到准时3、记得打开虚拟手机上的应用通知权限</p>
+<h2 id="4、记账（实现了记分点8，9的所有内容）"><a href="#4、记账（实现了记分点8，9的所有内容）" class="headerlink" title="4、记账（实现了记分点8，9的所有内容）"></a>4、记账（实现了记分点8，9的所有内容）</h2><h3 id="（1）设计思路-2"><a href="#（1）设计思路-2" class="headerlink" title="（1）设计思路"></a>（1）设计思路</h3><p>结合备忘录的相关界面设计以及待办事项界面对于日期的相关处理进行设计。</p>
+<p>计分点8：显示支出清单。默认显示当天、当月、当年的汇总值。可按日期、月份、年份、类别筛选支出清单，并显示筛选后的汇总值。</p>
+<p>Timerange为所选的当天/当月/当年，按下筛选按钮后，系统可以切换至对应的日期，查询该日期当天/当月/当年的相关信息。</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps35.jpg" alt="Bshu"> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps36.jpg" alt="Bshu"> </p>
+<p>计分点9：添加、删除、修改支出项。</p>
+<p>此处基本与备忘录界面的设计相同，多一个存储当前账单记录的记录日期的变量</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps37.jpg" alt="Bshu"> </p>
+<h3 id="（2）实验结果-2"><a href="#（2）实验结果-2" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>①实现记账主界面的设计，当天/当月/当年的选择</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps38.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps39.jpg" alt="Bshu"> </p>
+<p>②实现筛选进行切换至其他日期</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps40.jpg" alt="Bshu"><img src="/2024/02/04/personal-assistant-app/wps41.jpg" alt="Bshu"> </p>
+<p>③实现增删改的popup界面，如果输入不完整会显示相关toast内容</p>
+<pre><code>![Bshu](personal-assistant-app/wps42.jpg)![Bshu](personal-assistant-app/wps43.jpg)
+</code></pre><h3 id="（3）操作步骤-2"><a href="#（3）操作步骤-2" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户打开备忘录界面后，可以按通过按下右下角的浮动按钮来添加记录，此时会显示一个popup窗口，你可以在该窗口输入相关信息并进行保存记录，此时删除按钮与返回按钮都表示取消保存记录。</p>
+<p>用户可以通过选择spinner中的某一项来显示当天/当月/当年的相关账单以及总金额。</p>
+<p>用户可以通过按下筛选按钮，来切换至某一天，来查看该日期下当天/当月/当年的相关账单以及总金额。</p>
+<p>用户可以通过右上角的菜单栏来进行清除所有记账记录/设置。</p>
+<p>最后，用户可以按左上角的箭头返回至主界面。</p>
+<h3 id="（4）遇到的问题-2"><a href="#（4）遇到的问题-2" class="headerlink" title="（4）遇到的问题"></a>（4）遇到的问题</h3><p>①问题：用户如果在当前日期选择当月的信息的话，再进行筛选至某一天后，虽然显示的是该日的相关信息，但是spinner还是显示“当月”。</p>
+<p>分析：timeRangeSpinner.setSelection();函数可以直接设置spinner的状态</p>
+<p>解决方案：在updateExpenseListAndTotalAmount函数最后加入timeRangeSpinner.setSelection(0);代码即可。</p>
+<h1 id="四、心得"><a href="#四、心得" class="headerlink" title="四、心得"></a>四、心得</h1><p>该次个人应用的设计是我遇到的工程量最大的开发内容。代码量之大，知识点之多，思维量之大不得不让我沉下心去做。整个项目内容做做停停大概花了小半个月来实现全部要求，是我感慨颇深。一方面使我增加了项目经历，增强了我的码力，对于应用开发有了更多的理解；另一方面也极大地改变了我作为ACM-ICPC算法竞赛校队成员的刁钻码风，为了实现大项目而被迫提高程序可读性。</p>
+<p>项目中各界面的难度大概如下：主界面＜设置界面＜＜记账界面＜备忘录界面＜＜待办事项界面。主界面与设置界面主要就是外观，跳转等基础功能的设计。设置界面还好老师最后一堂课提了手能够有所了解。由于我是按照要求顺序所作，导致记账界面被放在了最后。对于做一整个界面首先是要有一个整体的设计与方案选择，由于我做的第一个界面是备忘录界面，这里以备忘录界面作为介绍。一开始，我根据之前所作的实验就决定采用fab按钮搭配recycleview来实现基本框架，在实现输入内容的时候，想起windows应用实践课程中使用的popupwindow，所以选择通过弹窗的形式来实现输入，这样既节省了空间，又可以保留背景避免过于单一。然后再根据最后一次实验实现menu时所使用的toolbar，整个界面框架到此就搭建完备了。</p>
+<p>界面设计完毕后，就是对于具体要求的逻辑实践了。由于码力问题，每次写完一部分代码都能保证正确，在我的代码中也可以看到很多通过日志来进行debug的痕迹。但是有时候也会存在一些代码怎么看都对结果就是不能正常实现目标的情况，究其原因都是一些偏门错误，例如缺少依赖、数据库没有升级、应用通知权限关闭等情况。这些问题的出现为我造成了巨大的麻烦，经过相关资料查询，以及一些细节的检查才进行解决。尤其是待办事项的筛选以及提醒部分，两个部分分别消耗我两天时间，前者是因为代码写的太差了导致逻辑较为麻烦，后者主要就是没想到虚拟手机关闭了应用的通知权限。但这些错误也是给了我未来的开发许多经验，例如备忘录的数据库升级问题，我在待办事项遇到时便有了相应的解决方案。虽然过程痛苦，而且应用可能还存在某些bug，但是整个结果下来还是收获颇丰。</p>
+<h1 id="文件链接"><a href="#文件链接" class="headerlink" title="文件链接"></a>文件链接</h1><p>magnet:?xt=urn:btih:0940D627735E0F32B1DA1CC58F2E4C6979AEC263&amp;dn=personalassistant.rar</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 移动应用开发</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/03/segment-tree-trick/" rel="prev" title="线段树的一些trick">
+      <i class="fa fa-chevron-left"></i> 线段树的一些trick
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%AF%BE%E9%A2%98%E7%90%86%E8%A7%A3%E4%B8%8E%E5%88%86%E6%9E%90%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">一、课题理解与分析：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">二、项目结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%86%85%E5%AE%B9%E4%BB%8B%E7%BB%8D%E4%B8%8E%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E7%AD%89"><span class="nav-number">3.</span> <span class="nav-text">三、内容介绍与遇到的问题等</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%B8%BB%E5%B1%8F%E5%B9%95%EF%BC%88%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%AE%B0%E5%88%86%E7%82%B91%E7%9A%84%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">1、主屏幕（实现了记分点1的所有内容）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-number">3.1.1.</span> <span class="nav-text">（1）设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="nav-number">3.1.2.</span> <span class="nav-text">（2）实验结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.1.3.</span> <span class="nav-text">（3）操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.1.4.</span> <span class="nav-text">（4）遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%A4%87%E5%BF%98%E5%BD%95%EF%BC%88%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%AE%B0%E5%88%86%E7%82%B92%E3%80%813%E3%80%814%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">2、备忘录（实现了记分点2、3、4所有内容）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">3.2.1.</span> <span class="nav-text">（1）设计思路：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AE%9E%E7%8E%B0%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">3.2.2.</span> <span class="nav-text">（2）实现结果：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">3.2.3.</span> <span class="nav-text">（3）操作步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">3.2.4.</span> <span class="nav-text">（4）遇到的问题：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%EF%BC%88%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%AE%B0%E5%88%86%E7%82%B95%EF%BC%8C6%EF%BC%8C7%E7%9A%84%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">3、待办事项（实现了记分点5，6，7的所有内容）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">（1）设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">（2）实验结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-1"><span class="nav-number">3.3.3.</span> <span class="nav-text">（3）操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-1"><span class="nav-number">3.3.4.</span> <span class="nav-text">（4）遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E8%AE%B0%E8%B4%A6%EF%BC%88%E5%AE%9E%E7%8E%B0%E4%BA%86%E8%AE%B0%E5%88%86%E7%82%B98%EF%BC%8C9%E7%9A%84%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">4、记账（实现了记分点8，9的所有内容）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF-2"><span class="nav-number">3.4.1.</span> <span class="nav-text">（1）设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C-2"><span class="nav-number">3.4.2.</span> <span class="nav-text">（2）实验结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4-2"><span class="nav-number">3.4.3.</span> <span class="nav-text">（3）操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-2"><span class="nav-number">3.4.4.</span> <span class="nav-text">（4）遇到的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%BF%83%E5%BE%97"><span class="nav-number">4.</span> <span class="nav-text">四、心得</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">文件链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="笙殇舊夢"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">笙殇舊夢</p>
+  <div class="site-description" itemprop="description">阿巴阿巴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; Wed Jan 31 2024 08:00:00 GMT+0800 (中国标准时间) – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">笙殇舊夢</span>
+</div>
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  
+  <!-- 页面点击出现爱心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+</body>
+</html>
