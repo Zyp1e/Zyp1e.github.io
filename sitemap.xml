@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2024/02/02/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
+    <loc>https://vegeone4.tech/2024/02/02/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
     
     <lastmod>2024-02-05</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/02/04/string/</loc>
+    <loc>https://vegeone4.tech/2024/02/04/string/</loc>
     
     <lastmod>2024-02-05</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/02/04/personal-assistant-app/</loc>
+    <loc>https://vegeone4.tech/2024/02/04/personal-assistant-app/</loc>
     
     <lastmod>2024-02-04</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/02/03/segment-tree-trick/</loc>
+    <loc>https://vegeone4.tech/2024/02/03/segment-tree-trick/</loc>
     
     <lastmod>2024-02-04</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/01/31/hello/</loc>
+    <loc>https://vegeone4.tech/2024/01/31/hello/</loc>
     
     <lastmod>2024-02-01</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/index.html</loc>
+    <loc>https://vegeone4.tech/categories/index.html</loc>
     
     <lastmod>2024-01-31</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/index.html</loc>
+    <loc>https://vegeone4.tech/tags/index.html</loc>
     
     <lastmod>2024-01-31</lastmod>
     
@@ -66,7 +66,7 @@
   
 
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://vegeone4.tech/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -74,21 +74,21 @@
 
   
   <url>
-    <loc>http://example.com/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://vegeone4.tech/tags/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>https://vegeone4.tech/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://vegeone4.tech/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -97,14 +97,14 @@
 
   
   <url>
-    <loc>http://example.com/categories/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://vegeone4.tech/categories/%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://vegeone4.tech/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-02-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
