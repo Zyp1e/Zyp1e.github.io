@@ -226,7 +226,7 @@
       </tags>
   </entry>
   <entry>
-    <title>string</title>
+    <title>字符串模板</title>
     <url>/2024/02/04/string/</url>
     <content><![CDATA[<p> 以下是我的字符串模板：编辑距离、后缀数组、回文树、扩展KMP、字符串哈希、AC自动机、Border、KMP、Manacher、SAM</p>
  <span id="more"></span>
@@ -251,7 +251,7 @@
       </tags>
   </entry>
   <entry>
-    <title>我的线段树模板</title>
+    <title>线段树模板</title>
     <url>/2024/02/02/%E7%BA%BF%E6%AE%B5%E6%A0%91/</url>
     <content><![CDATA[<h1 id="以下是我的线段树模板"><a href="#以下是我的线段树模板" class="headerlink" title="以下是我的线段树模板"></a>以下是我的线段树模板</h1><p>参考了dls的线段树模板，封装<code>+</code>减少了许多的码量</p>
  <span id="more"></span>
