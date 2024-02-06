@@ -71,7 +71,7 @@
 <meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps40.jpg">
 <meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps41.jpg">
 <meta property="article:published_time" content="2024-02-04T07:44:42.000Z">
-<meta property="article:modified_time" content="2024-02-04T08:45:22.714Z">
+<meta property="article:modified_time" content="2024-02-06T16:43:48.664Z">
 <meta property="article:author" content="笙殇舊夢">
 <meta property="article:tag" content="移动应用开发">
 <meta name="twitter:card" content="summary">
@@ -370,10 +370,16 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-02-04 15:44:42 / 修改时间：16:45:22" itemprop="dateCreated datePublished" datetime="2024-02-04T15:44:42+08:00">2024-02-04</time>
+              <time title="创建时间：2024-02-04 15:44:42" itemprop="dateCreated datePublished" datetime="2024-02-04T15:44:42+08:00">2024-02-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-02-07 00:43:48" itemprop="dateModified" datetime="2024-02-07T00:43:48+08:00">2024-02-07</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -578,7 +584,7 @@ mjx-container[display="true"] + br {
 <h1 id="四、心得"><a href="#四、心得" class="headerlink" title="四、心得"></a>四、心得</h1><p>该次个人应用的设计是我遇到的工程量最大的开发内容。代码量之大，知识点之多，思维量之大不得不让我沉下心去做。整个项目内容做做停停大概花了小半个月来实现全部要求，是我感慨颇深。一方面使我增加了项目经历，增强了我的码力，对于应用开发有了更多的理解；另一方面也极大地改变了我作为ACM-ICPC算法竞赛校队成员的刁钻码风，为了实现大项目而被迫提高程序可读性。</p>
 <p>项目中各界面的难度大概如下：主界面＜设置界面＜＜记账界面＜备忘录界面＜＜待办事项界面。主界面与设置界面主要就是外观，跳转等基础功能的设计。设置界面还好老师最后一堂课提了手能够有所了解。由于我是按照要求顺序所作，导致记账界面被放在了最后。对于做一整个界面首先是要有一个整体的设计与方案选择，由于我做的第一个界面是备忘录界面，这里以备忘录界面作为介绍。一开始，我根据之前所作的实验就决定采用fab按钮搭配recycleview来实现基本框架，在实现输入内容的时候，想起windows应用实践课程中使用的popupwindow，所以选择通过弹窗的形式来实现输入，这样既节省了空间，又可以保留背景避免过于单一。然后再根据最后一次实验实现menu时所使用的toolbar，整个界面框架到此就搭建完备了。</p>
 <p>界面设计完毕后，就是对于具体要求的逻辑实践了。由于码力问题，每次写完一部分代码都能保证正确，在我的代码中也可以看到很多通过日志来进行debug的痕迹。但是有时候也会存在一些代码怎么看都对结果就是不能正常实现目标的情况，究其原因都是一些偏门错误，例如缺少依赖、数据库没有升级、应用通知权限关闭等情况。这些问题的出现为我造成了巨大的麻烦，经过相关资料查询，以及一些细节的检查才进行解决。尤其是待办事项的筛选以及提醒部分，两个部分分别消耗我两天时间，前者是因为代码写的太差了导致逻辑较为麻烦，后者主要就是没想到虚拟手机关闭了应用的通知权限。但这些错误也是给了我未来的开发许多经验，例如备忘录的数据库升级问题，我在待办事项遇到时便有了相应的解决方案。虽然过程痛苦，而且应用可能还存在某些bug，但是整个结果下来还是收获颇丰。</p>
-<h1 id="文件链接"><a href="#文件链接" class="headerlink" title="文件链接"></a>文件链接</h1><p>magnet:?xt=urn:btih:0940D627735E0F32B1DA1CC58F2E4C6979AEC263&amp;dn=personalassistant.rar</p>
+<h1 id="文件链接"><a href="#文件链接" class="headerlink" title="文件链接"></a>文件链接</h1><p><a target="_blank" rel="noopener" href="https://github.com/Zyp1e/personal_assistant">https://github.com/Zyp1e/personal_assistant</a></p>
 
     </div>
 
