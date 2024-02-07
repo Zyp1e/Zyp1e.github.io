@@ -21,7 +21,26 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-
+<link rel="stylesheet" href="../css/APlayer.min.css"><!--APlayer的样式-->
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script><!--APlayer的依赖-->
+<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script><!--Meting的依赖-->
+<meting-js
+    server="netease"
+    type="playlist"
+    autoplay=true 
+    fixed=true 
+    mini=true
+    theme=#607d8b
+    loop="all"
+    order="random"
+    preload="auto"
+    mutex=true
+    listfolded=true
+    listmaxheight=340px
+    storagename="metingjs"
+    lrc-type=0
+    id="3099335800"> 
+</meting-js> 
   <meta name="description" content="阿巴阿巴">
 <meta property="og:type" content="website">
 <meta property="og:title" content="vegeone">
@@ -428,7 +447,7 @@ mjx-container[display="true"] + br {
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-07 00:43:48" itemprop="dateModified" datetime="2024-02-07T00:43:48+08:00">2024-02-07</time>
+                <time title="修改时间：2024-02-07 01:13:26" itemprop="dateModified" datetime="2024-02-07T01:13:26+08:00">2024-02-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -465,7 +484,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、课题理解与分析："><a href="#一、课题理解与分析：" class="headerlink" title="一、课题理解与分析："></a>一、课题理解与分析：</h1><p><img src="/2024/02/04/personal-assistant-app/20240204154558.png" alt="Bshu"><br><strong>所有记分点要求内容均已实现。</strong></p>
+          <h1 id="一、课题理解与分析："><a href="#一、课题理解与分析：" class="headerlink" title="一、课题理解与分析："></a>一、课题理解与分析：</h1><p><img src="/2024/02/04/personal-assistant-app/20240204154558.png" alt=" "><br><strong>所有记分点要求内容均已实现。</strong></p>
 <p>根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。</p>
 <p>对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执行，例如第二章的界面跳转、第三章的recycleview、fab、menu等、第五章的通知提醒等。<br>文件链接在文末<br></p>
           <!--noindex-->
@@ -1318,7 +1337,7 @@ if(canvas.getContext){
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  NexT.utils.getScript('//cdn.bootcdn.net/ajax/libs/valine/1.5.1/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item => {

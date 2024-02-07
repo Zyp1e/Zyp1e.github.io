@@ -1216,7 +1216,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #1fff53;
+  background: #5c0dff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2616,6 +2616,43 @@ mjx-container + br {
 }
 .links-of-blogroll-item {
   padding: 0;
+}
+#valine-comments button {
+  padding: 0.3rem 1rem;
+  border-color: #fff;
+  background-color: #8e8cd8;
+  color: #fff;
+  font-size: 0.7rem;
+}
+#valine-comments button:hover {
+  background-color: #ff7242;
+}
+#valine-comments textarea {
+  background: url("/images/comment_bg.png") 100% 100% no-repeat;
+}
+#valine-comments .info {
+  display: none;
+}
+#valine-comments .vimg {
+  border: 0;
+}
+#valine-comments .vimg:hover {
+  -webkit-transform: rotate(540deg);
+  -moz-transform: rotate(540deg);
+  -o-transform: rotate(540deg);
+  -ms-transform: rotate(540deg);
+  transform: rotate(540deg);
+}
+#valine-comments .vat {
+  padding: 0 0.8rem;
+  border: 1px solid #8e8cd8;
+  border-radius: 5px;
+  color: #8e8cd8;
+  font-size: 0.7125rem;
+}
+#valine-comments .vat:hover {
+  background-color: #8e8cd8;
+  color: #fff;
 }
 .content-wrap {
   background: initial;
