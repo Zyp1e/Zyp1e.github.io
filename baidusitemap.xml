@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://vegeone4.tech/2024/03/03/partial-sum-adjacent-difference/</loc>
-    <lastmod>2024-03-03</lastmod>
+    <lastmod>2024-03-15</lastmod>
+  </url>
+  <url>
+    <loc>http://vegeone4.tech/2024/03/15/dfs/</loc>
+    <lastmod>2024-03-15</lastmod>
+  </url>
+  <url>
+    <loc>http://vegeone4.tech/2024/03/15/bfs/</loc>
+    <lastmod>2024-03-15</lastmod>
+  </url>
+  <url>
+    <loc>http://vegeone4.tech/2024/03/15/acwing-2060/</loc>
+    <lastmod>2024-03-15</lastmod>
   </url>
   <url>
     <loc>http://vegeone4.tech/2024/03/02/binary-sort/</loc>

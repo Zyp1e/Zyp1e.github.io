@@ -44,23 +44,22 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta name="description" content="介绍定义docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。 优势 docker可以屏蔽环境差异  快速部署">
+  <meta name="description" content="DFSDFS介绍DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。 DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返回并总结到该叶子节点的父亲节点，称之为回溯。 DF">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker的学习笔记">
-<meta property="og:url" content="http://vegeone4.tech/2024/02/19/docker-0/index.html">
+<meta property="og:title" content="DFS">
+<meta property="og:url" content="http://vegeone4.tech/2024/03/15/dfs/index.html">
 <meta property="og:site_name" content="vegeone">
-<meta property="og:description" content="介绍定义docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。 优势 docker可以屏蔽环境差异  快速部署">
+<meta property="og:description" content="DFSDFS介绍DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。 DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返回并总结到该叶子节点的父亲节点，称之为回溯。 DF">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221164957.png">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221165455.png">
-<meta property="article:published_time" content="2024-02-18T16:35:07.000Z">
-<meta property="article:modified_time" content="2024-02-26T14:43:13.002Z">
+<meta property="og:image" content="http://vegeone4.tech/2024/03/15/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
+<meta property="article:published_time" content="2024-03-15T10:15:12.000Z">
+<meta property="article:modified_time" content="2024-03-15T14:19:49.708Z">
 <meta property="article:author" content="笙殇舊夢">
-<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="搜索">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221164957.png">
+<meta name="twitter:image" content="http://vegeone4.tech/2024/03/15/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
 
-<link rel="canonical" href="http://vegeone4.tech/2024/02/19/docker-0/">
+<link rel="canonical" href="http://vegeone4.tech/2024/03/15/dfs/">
 
 
 <script id="page-configurations">
@@ -73,7 +72,7 @@
   };
 </script>
 
-  <title>docker的学习笔记 | vegeone</title>
+  <title>DFS | vegeone</title>
   
 
 
@@ -331,7 +330,7 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://vegeone4.tech/2024/02/19/docker-0/">
+    <link itemprop="mainEntityOfPage" href="http://vegeone4.tech/2024/03/15/dfs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -344,7 +343,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          docker的学习笔记
+          DFS
         </h1>
 
         <div class="post-meta">
@@ -353,23 +352,17 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-02-19 00:35:07" itemprop="dateCreated datePublished" datetime="2024-02-19T00:35:07+08:00">2024-02-19</time>
+              <time title="创建时间：2024-03-15 18:15:12 / 修改时间：22:19:49" itemprop="dateCreated datePublished" datetime="2024-03-15T18:15:12+08:00">2024-03-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-26 22:43:13" itemprop="dateModified" datetime="2024-02-26T22:43:13+08:00">2024-02-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">基础技术</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
             </span>
 
@@ -382,8 +375,8 @@ mjx-container[display="true"] + br {
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2024/02/19/docker-0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/02/19/docker-0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2024/03/15/dfs/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/03/15/dfs/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -398,21 +391,13 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。</p>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ol>
-<li><p>docker可以屏蔽环境差异</p>
-</li>
-<li><p>快速部署</p>
+        <h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="DFS介绍"><a href="#DFS介绍" class="headerlink" title="DFS介绍"></a>DFS介绍</h2><p>DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。</p>
+<p>DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返回并总结到该叶子节点的父亲节点，称之为回溯。</p>
+<p>DFS大部分分为树上DFS与图上DFS，但其实两者是相通的，图上DFS可以将上下左右四个方向的遍历结果转化为该位置的四个儿子结点，此时还需要一个vis数组用来记录该儿子结点是否在别的分支出现过，尽管从一个点到另一个点会有多条路径，但如果不是要求最短路径的情况下，往往只需要记录一次即可。</p>
+<p><img src="/2024/03/15/dfs/QQ图片20240315221149.png" alt="dfs的常规遍历顺序 "></p>
 <span id="more"></span>
-</li>
-</ol>
-<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/2024/02/19/docker-0/QQ图片20240221164957.png" alt></p>
-<h1 id="容器创建"><a href="#容器创建" class="headerlink" title="容器创建"></a>容器创建</h1><p><img src="/2024/02/19/docker-0/QQ图片20240221165455.png" alt></p>
-<h2 id="通过命令直接创建-主要方式"><a href="#通过命令直接创建-主要方式" class="headerlink" title="通过命令直接创建(主要方式)"></a>通过命令直接创建(主要方式)</h2><p>镜像要求完整，但是稳定</p>
-<h2 id="通过dockerfile创建"><a href="#通过dockerfile创建" class="headerlink" title="通过dockerfile创建"></a>通过dockerfile创建</h2><p>灵活一些，容器创建时间长，稳定性不佳</p>
-<p>参考文献：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/187505981">什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yh4y1K7ka/?spm_id_from=333.337.search-card.all.click&amp;vd_source=c258d173d5f98543252f652c92d126c1">Docker详解，7分钟学会_哔哩哔哩_bilibili</a></p>
+<h2 id="DFS模板"><a href="#DFS模板" class="headerlink" title="DFS模板"></a>DFS模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>{<span class="comment">//树上dfs,该样例用于求这棵树的权值和</span></span><br><span class="line">    <span class="type">int</span> sum=w[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cnt[u];i++){<span class="comment">//cnt[u]表示u的子节点个数</span></span><br><span class="line">        sum+=<span class="built_in">dfs</span>(son[u][i]);<span class="comment">//遍历u的第i个儿子</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> d[<span class="number">4</span>][<span class="number">2</span>]={{<span class="number">1</span>,<span class="number">0</span>},{<span class="number">-1</span>,<span class="number">0</span>},{<span class="number">0</span>,<span class="number">1</span>},{<span class="number">0</span>,<span class="number">-1</span>}};<span class="comment">//四个方向</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>{<span class="comment">//x,y表示当前位置坐标，tx,ty表示目标位置坐标，该样例表示遍历图上每一个点</span></span><br><span class="line">    <span class="keyword">if</span>(vis[x][y])<span class="keyword">return</span>;</span><br><span class="line">    vis[x][y]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;++i){</span><br><span class="line">        <span class="type">int</span> dx=x+d[i][<span class="number">0</span>],dy=y+d[i][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(dx&lt;<span class="number">0</span>||dx&gt;=n||dy&lt;<span class="number">0</span>||dy&gt;=m)<span class="keyword">continue</span>;<span class="comment">//超出边界就不过去了</span></span><br><span class="line">        <span class="built_in">dfs</span>(dx,dy);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="写在末尾"><a href="#写在末尾" class="headerlink" title="写在末尾"></a>写在末尾</h2><p>以上都是比较明显的dfs搜索，但是很多时候遇到的情况都需要将题意向dfs树的转化，例如全排列，那么每一个结点的子节点就是所要排列的所有数，如果要求数字不重复只需添加vis数组记录即可，但是每次回溯后需要对该vis值清空。同样，作为常见的暴力拿部分分的神器，我们也可以依靠dfs枚举每一步或者每一个物品的状态，这样虽然时间复杂度到了阶乘或指数级别，但是足以拿一些部分分了。</p>
 
     </div>
 
@@ -428,7 +413,7 @@ mjx-container[display="true"] + br {
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://vegeone4.tech/2024/02/19/docker-0/" title="docker的学习笔记">http://vegeone4.tech/2024/02/19/docker-0/</a>
+    <a href="http://vegeone4.tech/2024/03/15/dfs/" title="DFS">http://vegeone4.tech/2024/03/15/dfs/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -440,7 +425,7 @@ mjx-container[display="true"] + br {
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 搜索</a>
           </div>
 
         
@@ -449,12 +434,12 @@ mjx-container[display="true"] + br {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/02/19/git-0/" rel="prev" title="git的学习笔记">
-      <i class="fa fa-chevron-left"></i> git的学习笔记
+    <a href="/2024/03/15/acwing-2060/" rel="prev" title="acwing 2060 奶牛选美">
+      <i class="fa fa-chevron-left"></i> acwing 2060 奶牛选美
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/02/19/json-0/" rel="next" title="Json的学习笔记">
-      Json的学习笔记 <i class="fa fa-chevron-right"></i>
+    <a href="/2024/03/15/bfs/" rel="next" title="bfs">
+      bfs <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -515,7 +500,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.</span> <span class="nav-text">优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">容器创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA-%E4%B8%BB%E8%A6%81%E6%96%B9%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">通过命令直接创建(主要方式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87dockerfile%E5%88%9B%E5%BB%BA"><span class="nav-number">3.2.</span> <span class="nav-text">通过dockerfile创建</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS"><span class="nav-number">1.</span> <span class="nav-text">DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">DFS介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DFS%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.2.</span> <span class="nav-text">DFS模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%AB%E5%B0%BE"><span class="nav-number">1.3.</span> <span class="nav-text">写在末尾</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

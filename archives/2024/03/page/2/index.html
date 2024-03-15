@@ -44,23 +44,17 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta name="description" content="介绍定义docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。 优势 docker可以屏蔽环境差异  快速部署">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker的学习笔记">
-<meta property="og:url" content="http://vegeone4.tech/2024/02/19/docker-0/index.html">
+  <meta name="description" content="阿巴阿巴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="vegeone">
+<meta property="og:url" content="http://vegeone4.tech/archives/2024/03/page/2/index.html">
 <meta property="og:site_name" content="vegeone">
-<meta property="og:description" content="介绍定义docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。 优势 docker可以屏蔽环境差异  快速部署">
+<meta property="og:description" content="阿巴阿巴">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221164957.png">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221165455.png">
-<meta property="article:published_time" content="2024-02-18T16:35:07.000Z">
-<meta property="article:modified_time" content="2024-02-26T14:43:13.002Z">
 <meta property="article:author" content="笙殇舊夢">
-<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://vegeone4.tech/2024/02/19/docker-0/QQ%E5%9B%BE%E7%89%8720240221164957.png">
 
-<link rel="canonical" href="http://vegeone4.tech/2024/02/19/docker-0/">
+<link rel="canonical" href="http://vegeone4.tech/archives/2024/03/page/2/">
 
 
 <script id="page-configurations">
@@ -68,12 +62,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>docker的学习笔记 | vegeone</title>
+  <title>归档 | vegeone</title>
   
 
 
@@ -106,119 +100,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
-<style>mjx-container[jax="SVG"] {
-  direction: ltr;
-}
-
-mjx-container[jax="SVG"] > svg {
-  overflow: visible;
-}
-
-mjx-container[jax="SVG"][display="true"] {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-}
-
-mjx-container[jax="SVG"][justify="left"] {
-  text-align: left;
-}
-
-mjx-container[jax="SVG"][justify="right"] {
-  text-align: right;
-}
-
-g[data-mml-node="merror"] > g {
-  fill: red;
-  stroke: red;
-}
-
-g[data-mml-node="merror"] > rect[data-background] {
-  fill: yellow;
-  stroke: none;
-}
-
-g[data-mml-node="mtable"] > line[data-line] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > rect[data-frame] {
-  stroke-width: 70px;
-  fill: none;
-}
-
-g[data-mml-node="mtable"] > .mjx-dashed {
-  stroke-dasharray: 140;
-}
-
-g[data-mml-node="mtable"] > .mjx-dotted {
-  stroke-linecap: round;
-  stroke-dasharray: 0,140;
-}
-
-g[data-mml-node="mtable"] > svg {
-  overflow: visible;
-}
-
-[jax="SVG"] mjx-tool {
-  display: inline-block;
-  position: relative;
-  width: 0;
-  height: 0;
-}
-
-[jax="SVG"] mjx-tool > mjx-tip {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-mjx-tool > mjx-tip {
-  display: inline-block;
-  padding: .2em;
-  border: 1px solid #888;
-  font-size: 70%;
-  background-color: #F8F8F8;
-  color: black;
-  box-shadow: 2px 2px 5px #AAAAAA;
-}
-
-g[data-mml-node="maction"][data-toggle] {
-  cursor: pointer;
-}
-
-mjx-status {
-  display: block;
-  position: fixed;
-  left: 1em;
-  bottom: 1em;
-  min-width: 25%;
-  padding: .2em .4em;
-  border: 1px solid #888;
-  font-size: 90%;
-  background-color: #F8F8F8;
-  color: black;
-}
-
-foreignObject[data-mjx-xml] {
-  font-family: initial;
-  line-height: normal;
-  overflow: visible;
-}
-
-.MathJax path {
-  stroke-width: 3;
-}
-
-mjx-container[display="true"] {
-  overflow: auto hidden;
-}
-
-mjx-container[display="true"] + br {
-  display: none;
-}
-</style></head>
+</head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -324,151 +206,59 @@ mjx-container[display="true"] + br {
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content archive">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://vegeone4.tech/2024/02/19/docker-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="笙殇舊夢">
-      <meta itemprop="description" content="阿巴阿巴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="vegeone">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          docker的学习笔记
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-19 00:35:07" itemprop="dateCreated datePublished" datetime="2024-02-19T00:35:07+08:00">2024-02-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-26 22:43:13" itemprop="dateModified" datetime="2024-02-26T22:43:13+08:00">2024-02-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%9F%BA%E7%A1%80%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">基础技术</span></a>
-                </span>
-            </span>
-
-          
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/02/19/docker-0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/02/19/docker-0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">嗯..! 目前共计 25 篇日志。 继续努力。</span>
+      </div>
 
       
-        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器，docker将程序以及程序所有的依赖都打包到docker container，这样你的程序可以在任何环境都会有一致的表现。</p>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><ol>
-<li><p>docker可以屏蔽环境差异</p>
-</li>
-<li><p>快速部署</p>
-<span id="more"></span>
-</li>
-</ol>
-<h1 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h1><p><img src="/2024/02/19/docker-0/QQ图片20240221164957.png" alt></p>
-<h1 id="容器创建"><a href="#容器创建" class="headerlink" title="容器创建"></a>容器创建</h1><p><img src="/2024/02/19/docker-0/QQ图片20240221165455.png" alt></p>
-<h2 id="通过命令直接创建-主要方式"><a href="#通过命令直接创建-主要方式" class="headerlink" title="通过命令直接创建(主要方式)"></a>通过命令直接创建(主要方式)</h2><p>镜像要求完整，但是稳定</p>
-<h2 id="通过dockerfile创建"><a href="#通过dockerfile创建" class="headerlink" title="通过dockerfile创建"></a>通过dockerfile创建</h2><p>灵活一些，容器创建时间长，稳定性不佳</p>
-<p>参考文献：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/187505981">什么是Docker？看这一篇干货文章就够了！ - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yh4y1K7ka/?spm_id_from=333.337.search-card.all.click&amp;vd_source=c258d173d5f98543252f652c92d126c1">Docker详解，7分钟学会_哔哩哔哩_bilibili</a></p>
-
+    <div class="collection-year">
+      <span class="collection-header">2024</span>
     </div>
 
-    
-    
-    
-        
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>笙殇舊夢
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://vegeone4.tech/2024/02/19/docker-0/" title="docker的学习笔记">http://vegeone4.tech/2024/02/19/docker-0/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2024-03-02T16:57:19+08:00"
+              content="2024-03-02">
+          03-02
+        </time>
+      </div>
 
+      <div class="post-title">
+          <a class="post-title-link" href="/2024/03/02/binary-sort/" itemprop="url">
+            <span itemprop="name">二分介绍</span>
+          </a>
+      </div>
 
-      <footer class="post-footer">
-          
-          <div class="post-tags">
-              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2024/02/19/git-0/" rel="prev" title="git的学习笔记">
-      <i class="fa fa-chevron-left"></i> git的学习笔记
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/02/19/json-0/" rel="next" title="Json的学习笔记">
-      Json的学习笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
   
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2024/03/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2024/03/">1</a><span class="page-number current">2</span>
+  </nav>
 
 
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -515,7 +305,6 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.2.</span> <span class="nav-text">优势</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">容器创建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E7%9B%B4%E6%8E%A5%E5%88%9B%E5%BB%BA-%E4%B8%BB%E8%A6%81%E6%96%B9%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">通过命令直接创建(主要方式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87dockerfile%E5%88%9B%E5%BB%BA"><span class="nav-number">3.2.</span> <span class="nav-text">通过dockerfile创建</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -962,61 +751,6 @@ if(canvas.getContext){
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
