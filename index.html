@@ -42,7 +42,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   <meta name="description" content="阿巴阿巴">
 <meta property="og:type" content="website">
@@ -487,7 +487,7 @@ l*r+(r-1)_{\text{if $r$>=2}}+(l-1)_{\text{if $l$>=2}},\text{else }
       
           <h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><h2 id="BFS介绍"><a href="#BFS介绍" class="headerlink" title="BFS介绍"></a>BFS介绍</h2><p>BFS，即宽度优先搜索，经常用于图上遍历等。相比于dfs,bfs是横向的搜索，是一层一层找的。</p>
 <p>BFS通过队列进行依次处理，对于每个结点的子节点，将它通过排队的形式排在这一层的后面而非直接遍历，对于一颗BFS树，它的BFS序便是一层一层的向下拓展。</p>
-<p><img data-src="bfs/QQ截图20240315222938.png" alt="bfs的常规遍历顺序 "></p>
+<p><img src="/2024/03/15/bfs/QQ截图20240315222938.png" alt="bfs的常规遍历顺序 "></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/15/bfs/#more" rel="contents">
@@ -585,7 +585,7 @@ l*r+(r-1)_{\text{if $r$>=2}}+(l-1)_{\text{if $l$>=2}},\text{else }
           <h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="DFS介绍"><a href="#DFS介绍" class="headerlink" title="DFS介绍"></a>DFS介绍</h2><p>DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。从根找到底，然后退回来换条路继续走到底，直到走完。</p>
 <p>DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返回并总结到该叶子节点的父亲节点，称之为回溯。</p>
 <p>DFS大部分分为树上DFS与图上DFS，但其实两者是相通的，图上DFS可以将上下左右四个方向的遍历结果转化为该位置的四个儿子结点，此时还需要一个vis数组用来记录该儿子结点是否在别的分支出现过，尽管从一个点到另一个点会有多条路径，但如果不是要求最短路径的情况下，往往只需要记录一次即可。</p>
-<p><img data-src="dfs/QQ图片20240315221149.png" alt="dfs的常规遍历顺序 "></p>
+<p><img src="/2024/03/15/dfs/QQ图片20240315221149.png" alt="dfs的常规遍历顺序 "></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/03/15/dfs/#more" rel="contents">
@@ -1682,7 +1682,6 @@ if(canvas.getContext){
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 

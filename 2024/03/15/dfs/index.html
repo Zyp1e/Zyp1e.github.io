@@ -42,7 +42,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   <meta name="description" content="DFSDFS介绍DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。从根找到底，然后退回来换条路继续走到底，直到走完。 DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返">
 <meta property="og:type" content="article">
@@ -51,13 +51,13 @@
 <meta property="og:site_name" content="vegeone">
 <meta property="og:description" content="DFSDFS介绍DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。从根找到底，然后退回来换条路继续走到底，直到走完。 DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://vegeone4.tech/2024/03/15/dfs/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
+<meta property="og:image" content="http://vegeone4.tech/2024/03/15/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
 <meta property="article:published_time" content="2024-03-15T10:15:12.000Z">
 <meta property="article:modified_time" content="2024-03-16T14:50:32.296Z">
 <meta property="article:author" content="笙殇舊夢">
 <meta property="article:tag" content="搜索">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://vegeone4.tech/2024/03/15/dfs/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
+<meta name="twitter:image" content="http://vegeone4.tech/2024/03/15/dfs/QQ%E5%9B%BE%E7%89%8720240315221149.png">
 
 <link rel="canonical" href="http://vegeone4.tech/2024/03/15/dfs/">
 
@@ -400,7 +400,7 @@ mjx-container[display="true"] + br {
         <h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><h2 id="DFS介绍"><a href="#DFS介绍" class="headerlink" title="DFS介绍"></a>DFS介绍</h2><p>DFS，即深度优先搜索，经常用于暴力以及图上遍历等。相比于bfs,dfs是纵向的搜索，是一次性找到底的。从根找到底，然后退回来换条路继续走到底，直到走完。</p>
 <p>DFS可以理解为是递归+回溯。对于一棵DFS树，其搜索的方式是从根结点开始，沿着一条边一直走到底，层层递归，每次进入一个子节点就可以理解为一个新的以此子节点为根的DFS树，称之为递归。当访问到叶子结点时，又需要将叶子结点的信息返回并总结到该叶子节点的父亲节点，称之为回溯。</p>
 <p>DFS大部分分为树上DFS与图上DFS，但其实两者是相通的，图上DFS可以将上下左右四个方向的遍历结果转化为该位置的四个儿子结点，此时还需要一个vis数组用来记录该儿子结点是否在别的分支出现过，尽管从一个点到另一个点会有多条路径，但如果不是要求最短路径的情况下，往往只需要记录一次即可。</p>
-<p><img data-src="dfs/QQ图片20240315221149.png" alt="dfs的常规遍历顺序 "></p>
+<p><img src="/2024/03/15/dfs/QQ图片20240315221149.png" alt="dfs的常规遍历顺序 "></p>
 <span id="more"></span>
 <h2 id="DFS模板"><a href="#DFS模板" class="headerlink" title="DFS模板"></a>DFS模板</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span></span>{<span class="comment">//树上dfs,该样例用于求这棵树的权值和</span></span><br><span class="line">    <span class="type">int</span> sum=w[u];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cnt[u];i++){<span class="comment">//cnt[u]表示u的子节点个数</span></span><br><span class="line">        sum+=<span class="built_in">dfs</span>(son[u][i]);<span class="comment">//遍历u的第i个儿子</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> d[<span class="number">4</span>][<span class="number">2</span>]={{<span class="number">1</span>,<span class="number">0</span>},{<span class="number">-1</span>,<span class="number">0</span>},{<span class="number">0</span>,<span class="number">1</span>},{<span class="number">0</span>,<span class="number">-1</span>}};<span class="comment">//四个方向上x,y轴分别的变化量</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>{<span class="comment">//x,y表示当前位置坐标，tx,ty表示目标位置坐标，该样例表示遍历图上每一个点</span></span><br><span class="line">    <span class="keyword">if</span>(vis[x][y])<span class="keyword">return</span>;</span><br><span class="line">    vis[x][y]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;++i){</span><br><span class="line">        <span class="type">int</span> dx=x+d[i][<span class="number">0</span>],dy=y+d[i][<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(dx&lt;<span class="number">0</span>||dx&gt;=n||dy&lt;<span class="number">0</span>||dy&gt;=m)<span class="keyword">continue</span>;<span class="comment">//超出边界就不过去了</span></span><br><span class="line">        <span class="built_in">dfs</span>(dx,dy);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <h2 id="写在末尾"><a href="#写在末尾" class="headerlink" title="写在末尾"></a>写在末尾</h2><p>以上都是比较明显的dfs搜索，但是很多时候遇到的情况都需要将题意向dfs树的转化，例如全排列，那么每一个结点的子节点就是所要排列的所有数，如果要求数字不重复只需添加vis数组记录即可，但是每次回溯后需要对该vis值清空。同样，作为常见的暴力拿部分分的神器，我们也可以依靠dfs枚举每一步或者每一个物品的状态，这样虽然时间复杂度到了阶乘或指数级别，但是足以拿一些部分分了。</p>
@@ -874,7 +874,6 @@ if(canvas.getContext){
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 

@@ -42,7 +42,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   <meta name="description" content="一、课题理解与分析：所有记分点要求内容均已实现。 根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。 对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执">
 <meta property="og:type" content="article">
@@ -51,53 +51,53 @@
 <meta property="og:site_name" content="vegeone">
 <meta property="og:description" content="一、课题理解与分析：所有记分点要求内容均已实现。 根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。 对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/20240204154558.png">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps2.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps3.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps4.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps5.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps6.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps7.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps8.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps9.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps10.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps11.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps12.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps13.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps14.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps15.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps16.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps17.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps18.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps19.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps20.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps21.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps22.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps23.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps24.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps25.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps26.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps27.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps28.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps29.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps30.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps31.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps32.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps33.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps34.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps35.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps36.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps37.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps38.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps39.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps40.jpg">
-<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/wps41.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/20240204154558.png">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps2.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps3.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps4.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps5.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps6.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps7.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps8.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps9.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps10.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps11.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps12.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps13.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps14.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps15.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps16.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps17.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps18.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps19.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps20.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps21.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps22.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps23.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps24.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps25.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps26.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps27.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps28.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps29.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps30.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps31.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps32.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps33.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps34.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps35.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps36.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps37.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps38.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps39.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps40.jpg">
+<meta property="og:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/wps41.jpg">
 <meta property="article:published_time" content="2024-02-04T07:44:42.000Z">
 <meta property="article:modified_time" content="2024-02-06T17:13:26.510Z">
 <meta property="article:author" content="笙殇舊夢">
 <meta property="article:tag" content="移动应用开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/personal-assistant-app/20240204154558.png">
+<meta name="twitter:image" content="http://vegeone4.tech/2024/02/04/personal-assistant-app/20240204154558.png">
 
 <link rel="canonical" href="http://vegeone4.tech/2024/02/04/personal-assistant-app/">
 
@@ -437,7 +437,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="一、课题理解与分析："><a href="#一、课题理解与分析：" class="headerlink" title="一、课题理解与分析："></a>一、课题理解与分析：</h1><p><img data-src="personal-assistant-app/20240204154558.png" alt=" "><br><strong>所有记分点要求内容均已实现。</strong></p>
+        <h1 id="一、课题理解与分析："><a href="#一、课题理解与分析：" class="headerlink" title="一、课题理解与分析："></a>一、课题理解与分析：</h1><p><img src="/2024/02/04/personal-assistant-app/20240204154558.png" alt=" "><br><strong>所有记分点要求内容均已实现。</strong></p>
 <p>根据要求来看，主界面主要实现的是向各个界面的跳转功能。备忘录界面实现的记录的存储、显示以及其他查看操作。待办事项界面可以通过借鉴备忘录界面实现一些记录的存储、显示以及其他查看操作，但是多了时间和提醒的概念。记账只要结合备忘录界面和待办事项界面即可。</p>
 <p>对于数据的存储，可以采用数据库来进行存储以及处理。对于大部分的需求内容，都可以采用课上的讲义内容来执行，例如第二章的界面跳转、第三章的recycleview、fab、menu等、第五章的通知提醒等。<br>文件链接在文末<br> <span id="more"></span></p>
 <h1 id="二、项目结构"><a href="#二、项目结构" class="headerlink" title="二、项目结构"></a>二、项目结构</h1><p>├── src </p>
@@ -492,11 +492,11 @@ mjx-container[display="true"] + br {
 <h1 id="三、内容介绍与遇到的问题等"><a href="#三、内容介绍与遇到的问题等" class="headerlink" title="三、内容介绍与遇到的问题等"></a>三、内容介绍与遇到的问题等</h1><h2 id="1、主屏幕（实现了记分点1的所有内容）"><a href="#1、主屏幕（实现了记分点1的所有内容）" class="headerlink" title="1、主屏幕（实现了记分点1的所有内容）"></a>1、主屏幕（实现了记分点1的所有内容）</h2><h3 id="（1）设计思路"><a href="#（1）设计思路" class="headerlink" title="（1）设计思路"></a>（1）设计思路</h3><p>主要设计思路借鉴了第一次实验的实验内容，显示功能列表，实现设置屏幕。</p>
 <p>记分点1：显示功能清单，备忘录、待办事项、记账，点击后进入相应的功能页面。应用栏显示设置菜单。进入设置页面后，可以对各功能的分类等信息进行设置。</p>
 <p>主界面相关代码内容：</p>
-<p><img data-src="personal-assistant-app/wps2.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps2.jpg" alt=" "> </p>
 <p>设置界面设计内容：</p>
-<p><img data-src="personal-assistant-app/wps3.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps3.jpg" alt=" "> </p>
 <h3 id="（2）实验结果"><a href="#（2）实验结果" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>实现功能清单的显示以及设置界面屏幕</p>
-<p><img data-src="personal-assistant-app/wps4.jpg" alt=" "><img data-src="personal-assistant-app/wps5.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps4.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps5.jpg" alt=" "> </p>
 <h3 id="（3）操作步骤"><a href="#（3）操作步骤" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户可以可以直接按下对应界面的按钮直接进入该界面，用户可以通过主界面右上角菜单中的设置选项、或者主界面的设置按钮进入设置界面</p>
 <h3 id="（4）遇到的问题"><a href="#（4）遇到的问题" class="headerlink" title="（4）遇到的问题"></a>（4）遇到的问题</h3><p>问题：设置界面的显示存在问题。</p>
 <p>分析：通过最后一堂课了解到用preferences来进行界面设计。</p>
@@ -504,25 +504,25 @@ mjx-container[display="true"] + br {
 <h2 id="2、备忘录（实现了记分点2、3、4所有内容）"><a href="#2、备忘录（实现了记分点2、3、4所有内容）" class="headerlink" title="2、备忘录（实现了记分点2、3、4所有内容）"></a>2、备忘录（实现了记分点2、3、4所有内容）</h2><h3 id="（1）设计思路："><a href="#（1）设计思路：" class="headerlink" title="（1）设计思路："></a>（1）设计思路：</h3><p>主要设计思路借鉴了最后一次的实验内容，即通过fab向Recycleview控件中添加内容。分类功能默认实现，即进入界面后已经进行了分类，具有相同的标签的记录将相邻排列，并只显示该类第一条记录的标签。</p>
 <p>计分点2：显示备忘列表。可按创建时间、标题等对列表排序。</p>
 <p>在设计备忘录界面时，我选择使用RecyclerView来展示备忘录列表，并使用Toolbar搭配Menu菜单为用户提供了按创建时间和标题排序的功能。通过在 MemoActivity.java 中实现了排序的方法，用户可以方便地选择不同的排序方式。这样，用户可以根据自己的需求，轻松查看备忘录列表。</p>
-<p><img data-src="personal-assistant-app/wps6.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps6.jpg" alt=" "> </p>
 <p>计分点3：支持添加、删除、修改备忘。</p>
 <p>我确保用户能够方便地进行备忘录的添加、删除和修改操作。通过弹出 PopupWindow，用户可以轻松输入或编辑备忘录的标题、内容和标签。保存时，我在 saveOrUpdateMemo 方法中判断备忘录是否为空，从而进行添加或更新的操作，并及时更新备忘录列表。</p>
-<p><img data-src="personal-assistant-app/wps7.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps8.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps7.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps8.jpg" alt=" "> </p>
 <p>计分点4：支持分类和标签。支持按分类或标签筛选备忘。</p>
 <p>我在备忘录中新增了标签属性，并提供了按标签筛选备忘录的功能。通过在 MemoDatabaseHelper.java 中提供了获取所有标签和按标签筛选备忘录的方法。在 MemoActivity.java 中实现了显示对话框的方法，并通过选择标签来更新备忘录列表来进行筛选。</p>
 <p>备忘录默认实现分类，对于具有相同标签的记录，将会相邻排列，并只显示该类的第一条记录的标签值。</p>
-<p><img data-src="personal-assistant-app/wps9.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps10.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps11.jpg" alt=" "><img data-src="personal-assistant-app/wps12.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps9.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps10.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps11.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps12.jpg" alt=" "> </p>
 <h3 id="（2）实现结果："><a href="#（2）实现结果：" class="headerlink" title="（2）实现结果："></a>（2）实现结果：</h3><p>①按下浮动按钮后，将会弹出一个窗口，用户可以在此弹出窗口输入标题、内容、标签，输入完毕后可以按下保存按钮进行保存，也可以通过按下返回按钮取消添加。</p>
-<p><img data-src="personal-assistant-app/wps13.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps13.jpg" alt=" "> </p>
 <p>②在已有的备忘录记录当中，用户可以点击其中一条记录，来对该记录进行修改或者删除该记录。</p>
-<p><img data-src="personal-assistant-app/wps14.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps14.jpg" alt=" "> </p>
 <p>③用户也可以通过按下筛选按钮，根据标签内容进行筛选，也可以通过按下清除筛选部分来取消筛选</p>
-<p><img data-src="personal-assistant-app/wps15.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps15.jpg" alt=" "> </p>
 <p>④用户可以在menu栏实现跳转设置界面、清空备忘录、排序等操作。</p>
-<p><img data-src="personal-assistant-app/wps16.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps16.jpg" alt=" "> </p>
 <p>⑤退出应用重新打开后，之前的备忘录记录依旧能够保留。</p>
 <h3 id="（3）操作步骤："><a href="#（3）操作步骤：" class="headerlink" title="（3）操作步骤："></a>（3）操作步骤：</h3><p>用户打开备忘录界面后，可以按通过按下右下角的浮动按钮来添加记录，此时会显示一个popup窗口，你可以在该窗口输入相关信息并进行保存记录，此时删除按钮与返回按钮都表示取消保存记录。</p>
 <p>保存记录后该记录会显示在Recycleview当中，点击对应记录，你可以对该记录进行修改/删除/取消修改操作。</p>
@@ -542,27 +542,27 @@ mjx-container[display="true"] + br {
 <p>计分点5：显示待办清单。支持按类别、日期筛选。</p>
 <p>对于按种类筛选，将获取当前所有的种类内容，用户可以选择对应的种类</p>
 <p>对于按日期筛选，根据选择的日期，设置起始时间戳为该日期00：00：00，截止日期为第二天的00：00：00，筛选时间戳在此范围内的记录</p>
-<p><img data-src="personal-assistant-app/wps17.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps18.jpg" alt=" "><img data-src="personal-assistant-app/wps19.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps17.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps18.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps19.jpg" alt=" "> </p>
 <p>计分点6：添加、删除、修改待办事项。</p>
 <p>此处与备忘录的增删改部分相近，但是待办事项界面设计日期与时间，所以增加了TimePicker与datePickerDialog来输入时间与日期</p>
-<p><img data-src="personal-assistant-app/wps20.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps21.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps20.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps21.jpg" alt=" "> </p>
 <p>计分点7：支持提醒功能。提醒分单次和重复两种类型。</p>
 <p>此处sendNotification函数包括了讲义中的createNotification函数与handleNotification函数。</p>
 <p>由于使用重复提醒的函数为setInexactRepeating函数，所以重复提醒的第一次提醒时间会存在一定的延迟</p>
-<p><img data-src="personal-assistant-app/wps22.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps23.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps22.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps23.jpg" alt=" "> </p>
 <h3 id="（2）实验结果-1"><a href="#（2）实验结果-1" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>①界面整体布局，菜单内容</p>
-<p><img data-src="personal-assistant-app/wps24.jpg" alt=" "><img data-src="personal-assistant-app/wps25.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps24.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps25.jpg" alt=" "> </p>
 <p>②筛选实现部分</p>
-<p><img data-src="personal-assistant-app/wps26.jpg" alt=" "><img data-src="personal-assistant-app/wps27.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps28.jpg" alt=" "><img data-src="personal-assistant-app/wps29.jpg" alt=" ">（选择12.25筛选后）</p>
+<p><img src="/2024/02/04/personal-assistant-app/wps26.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps27.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps28.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps29.jpg" alt=" ">（选择12.25筛选后）</p>
 <p>③实现增删改部分，popup窗口内容，可以按下选择日期按钮显示日历，可以按下左下角的小键盘将钟表切换成直接输入时间。重复时间通过spinner来选择</p>
-<p><img data-src="personal-assistant-app/wps30.jpg" alt=" "><img data-src="personal-assistant-app/wps31.jpg" alt=" "><img data-src="personal-assistant-app/wps32.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps33.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps30.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps31.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps32.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps33.jpg" alt=" "> </p>
 <p>④提醒部分，显然可以上方有通知提醒，下方有toast显示，重复提醒第一次的提醒时间可能要延迟3-5min</p>
-<p><img data-src="personal-assistant-app/wps34.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps34.jpg" alt=" "> </p>
 <h3 id="（3）操作步骤-1"><a href="#（3）操作步骤-1" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户进入到待办事项界面后，用户可以按下右下角的“+”浮动按钮来添加待办事项记录，用户可以依次1、输入标题、种类、描述，然后可以点击“选择日期”按钮，2、在弹出的日历中选择日期（默认为当天），3、然后用户可以直接在钟表上选择具体时间，或者在左下角的键盘来输入具体的时间。4、然后用户可以选择是否进行重复提醒，并在spinner中选择重复提醒的间隔时间。</p>
 <p>同备忘录，用户可以直接点击某条记录来进行修改记录相关内容。</p>
 <p>用户可以按下toolbar中的筛选选项来进行标签筛选以及日期筛选，按下标签筛选后，用户可以选择某个标签进行筛选；按下日期筛选后，用户也可以选择某个日期来筛选出记录中年月日与该日期相同的项。两种筛选都可以清除筛选。</p>
@@ -584,15 +584,15 @@ mjx-container[display="true"] + br {
 <h2 id="4、记账（实现了记分点8，9的所有内容）"><a href="#4、记账（实现了记分点8，9的所有内容）" class="headerlink" title="4、记账（实现了记分点8，9的所有内容）"></a>4、记账（实现了记分点8，9的所有内容）</h2><h3 id="（1）设计思路-2"><a href="#（1）设计思路-2" class="headerlink" title="（1）设计思路"></a>（1）设计思路</h3><p>结合备忘录的相关界面设计以及待办事项界面对于日期的相关处理进行设计。</p>
 <p>计分点8：显示支出清单。默认显示当天、当月、当年的汇总值。可按日期、月份、年份、类别筛选支出清单，并显示筛选后的汇总值。</p>
 <p>Timerange为所选的当天/当月/当年，按下筛选按钮后，系统可以切换至对应的日期，查询该日期当天/当月/当年的相关信息。</p>
-<p><img data-src="personal-assistant-app/wps35.jpg" alt=" "> </p>
-<p><img data-src="personal-assistant-app/wps36.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps35.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps36.jpg" alt=" "> </p>
 <p>计分点9：添加、删除、修改支出项。</p>
 <p>此处基本与备忘录界面的设计相同，多一个存储当前账单记录的记录日期的变量</p>
-<p><img data-src="personal-assistant-app/wps37.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps37.jpg" alt=" "> </p>
 <h3 id="（2）实验结果-2"><a href="#（2）实验结果-2" class="headerlink" title="（2）实验结果"></a>（2）实验结果</h3><p>①实现记账主界面的设计，当天/当月/当年的选择</p>
-<p><img data-src="personal-assistant-app/wps38.jpg" alt=" "><img data-src="personal-assistant-app/wps39.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps38.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps39.jpg" alt=" "> </p>
 <p>②实现筛选进行切换至其他日期</p>
-<p><img data-src="personal-assistant-app/wps40.jpg" alt=" "><img data-src="personal-assistant-app/wps41.jpg" alt=" "> </p>
+<p><img src="/2024/02/04/personal-assistant-app/wps40.jpg" alt=" "><img src="/2024/02/04/personal-assistant-app/wps41.jpg" alt=" "> </p>
 <p>③实现增删改的popup界面，如果输入不完整会显示相关toast内容</p>
 <pre><code>![ ](personal-assistant-app/wps42.jpg)![ ](personal-assistant-app/wps43.jpg)
 </code></pre><h3 id="（3）操作步骤-2"><a href="#（3）操作步骤-2" class="headerlink" title="（3）操作步骤"></a>（3）操作步骤</h3><p>用户打开备忘录界面后，可以按通过按下右下角的浮动按钮来添加记录，此时会显示一个popup窗口，你可以在该窗口输入相关信息并进行保存记录，此时删除按钮与返回按钮都表示取消保存记录。</p>
@@ -1077,7 +1077,6 @@ if(canvas.getContext){
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
