@@ -44,20 +44,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"vegeone4.tech","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-  <meta name="description" content="题意n个点，每个点都可以加整数升油，每个点加油的单价不同，1升油可以行驶d km，求到达终点所要花费的最少金钱 思路贪心思路，每次遇到单价更少的就用单价更少的加油方式">
+  <meta name="description" content="lambda表达式的理解lambda表达式的具体定义可以去网上找，我对它的理解就是将一个函数以更简洁的方式，以表达式的形式内嵌在某个函数中。 lambda表达式的应用场景lambda表达式最常用的是在sort函数中，把cmp函数以lambda表达式直接写在内部，代码如下: 123sort(a.begin(),a.end(),[&amp;](int x,int y){&#x2F;&#x2F;此排序采用降序排序   re">
 <meta property="og:type" content="article">
-<meta property="og:title" content="acwing 5308 公路">
-<meta property="og:url" content="http://vegeone4.tech/2024/02/26/acwing-5308/index.html">
+<meta property="og:title" content="算法中所用的lambda表达式">
+<meta property="og:url" content="http://vegeone4.tech/2024/03/20/lambda-expressions/index.html">
 <meta property="og:site_name" content="vegeone">
-<meta property="og:description" content="题意n个点，每个点都可以加整数升油，每个点加油的单价不同，1升油可以行驶d km，求到达终点所要花费的最少金钱 思路贪心思路，每次遇到单价更少的就用单价更少的加油方式">
+<meta property="og:description" content="lambda表达式的理解lambda表达式的具体定义可以去网上找，我对它的理解就是将一个函数以更简洁的方式，以表达式的形式内嵌在某个函数中。 lambda表达式的应用场景lambda表达式最常用的是在sort函数中，把cmp函数以lambda表达式直接写在内部，代码如下: 123sort(a.begin(),a.end(),[&amp;](int x,int y){&#x2F;&#x2F;此排序采用降序排序   re">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-26T06:45:58.000Z">
-<meta property="article:modified_time" content="2024-03-02T15:58:04.232Z">
+<meta property="article:published_time" content="2024-03-20T11:11:03.000Z">
+<meta property="article:modified_time" content="2024-03-20T11:54:10.427Z">
 <meta property="article:author" content="笙殇舊夢">
-<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="搜索">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://vegeone4.tech/2024/02/26/acwing-5308/">
+<link rel="canonical" href="http://vegeone4.tech/2024/03/20/lambda-expressions/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>acwing 5308 公路 | vegeone</title>
+  <title>算法中所用的lambda表达式 | vegeone</title>
   
 
 
@@ -328,7 +328,7 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://vegeone4.tech/2024/02/26/acwing-5308/">
+    <link itemprop="mainEntityOfPage" href="http://vegeone4.tech/2024/03/20/lambda-expressions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -341,7 +341,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          acwing 5308 公路
+          算法中所用的lambda表达式
         </h1>
 
         <div class="post-meta">
@@ -350,16 +350,10 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-02-26 14:45:58" itemprop="dateCreated datePublished" datetime="2024-02-26T14:45:58+08:00">2024-02-26</time>
+              <time title="创建时间：2024-03-20 19:11:03 / 修改时间：19:54:10" itemprop="dateCreated datePublished" datetime="2024-03-20T19:11:03+08:00">2024-03-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-02 23:58:04" itemprop="dateModified" datetime="2024-03-02T23:58:04+08:00">2024-03-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -379,8 +373,8 @@ mjx-container[display="true"] + br {
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2024/02/26/acwing-5308/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/02/26/acwing-5308/" itemprop="commentCount"></span>
+    <a title="valine" href="/2024/03/20/lambda-expressions/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/03/20/lambda-expressions/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -395,10 +389,25 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>n个点，每个点都可以加整数升油，每个点加油的单价不同，1升油可以行驶d km，求到达终点所要花费的最少金钱</p>
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>贪心思路，每次遇到单价更少的就用单价更少的加油方式</p>
+        <h2 id="lambda表达式的理解"><a href="#lambda表达式的理解" class="headerlink" title="lambda表达式的理解"></a>lambda表达式的理解</h2><p>lambda表达式的具体定义可以去网上找，我对它的理解就是将一个函数以更简洁的方式，以表达式的形式内嵌在某个函数中。</p>
+<h2 id="lambda表达式的应用场景"><a href="#lambda表达式的应用场景" class="headerlink" title="lambda表达式的应用场景"></a>lambda表达式的应用场景</h2><p>lambda表达式最常用的是在sort函数中，把cmp函数以lambda表达式直接写在内部，代码如下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>(),[&amp;](<span class="type">int</span> x,<span class="type">int</span> y){<span class="comment">//此排序采用降序排序</span></span><br><span class="line">   <span class="keyword">return</span> x&gt;y; </span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> x&gt;y;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">sort</span>(a.<span class="built_in">begin</span>(),a.<span class="built_in">end</span>(),cmp);</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> endl <span class="string">'\n'</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;pp;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> n,d;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;d;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;<span class="built_in">v</span>(n+<span class="number">1</span>),<span class="built_in">a</span>(n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;++i)cin&gt;&gt;v[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)cin&gt;&gt;a[i];</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>,pre=<span class="number">1e18</span>,cost=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;n;++i){</span><br><span class="line">        <span class="keyword">if</span>(pre&gt;a[i]){</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;=<span class="number">0</span>){</span><br><span class="line">                <span class="type">int</span> temp=(-sum+d<span class="number">-1</span>)/d;</span><br><span class="line">                cost+=temp*pre;</span><br><span class="line">                sum+=temp*d;</span><br><span class="line">            }</span><br><span class="line">            pre=a[i];</span><br><span class="line">        }</span><br><span class="line">        sum-=v[i];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)cost+=(-sum+d<span class="number">-1</span>)/d*pre;</span><br><span class="line">    cout&lt;&lt;cost&lt;&lt;endl;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> T=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">// cin&gt;&gt;T;</span></span><br><span class="line">    <span class="keyword">while</span>(T--)	<span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>如果习惯使用定义全局变量的话，可能很多人都基本不会在算法题里用到lambda表达式，但是像我这种对于多种数据懒得手动清空的人来说，不得不把相关变量都定义在solve函数内部，因此再不进行传参的情况下果断选择了lambda表达式，以下是常见的lambda函数写法:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> check=[&amp;](<span class="type">int</span> x){</span><br><span class="line">    <span class="keyword">return</span> x&gt;<span class="number">0</span>;</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> x)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> x&gt;<span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>对于一种特殊的函数，即需要调用自身的递归函数，写法上稍有变化</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> dfs=[&amp;](<span class="keyword">auto</span> self,<span class="type">int</span> x)-&gt; <span class="type">int</span> {</span><br><span class="line">  	<span class="keyword">if</span>(x&gt;<span class="number">0</span>) <span class="keyword">return</span> <span class="built_in">self</span>(self,x<span class="number">-1</span>)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">};</span><br><span class="line"><span class="built_in">dfs</span>(dfs,x);</span><br></pre></td></tr></table></figure>
+<p>其中self和x一样都是随便取的名字，非强制要求，但一个都得要有一个参数代表函数自身。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><p>注意lambda表达式依然只是一个表达式，每个lamda表达最后要记得跟上一个<strong>“;”</strong></p>
+</li>
+<li><p>递归函数中<strong>“-&gt;”</strong>后的数据类型需要用空格隔开</p>
+</li>
+</ol>
 
     </div>
 
@@ -414,7 +423,7 @@ mjx-container[display="true"] + br {
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://vegeone4.tech/2024/02/26/acwing-5308/" title="acwing 5308 公路">http://vegeone4.tech/2024/02/26/acwing-5308/</a>
+    <a href="http://vegeone4.tech/2024/03/20/lambda-expressions/" title="算法中所用的lambda表达式">http://vegeone4.tech/2024/03/20/lambda-expressions/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -426,7 +435,7 @@ mjx-container[display="true"] + br {
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"><i class="fa fa-tag"></i> 贪心</a>
+              <a href="/tags/%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 搜索</a>
           </div>
 
         
@@ -435,12 +444,12 @@ mjx-container[display="true"] + br {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/02/20/cf-928-4/" rel="prev" title="Codeforces Round 928 (Div. 4)">
-      <i class="fa fa-chevron-left"></i> Codeforces Round 928 (Div. 4)
+    <a href="/2024/03/17/acwing-4261/" rel="prev" title="acwing-4261">
+      <i class="fa fa-chevron-left"></i> acwing-4261
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/02/28/acwing-5408/" rel="next" title="acwing 5408 保险箱">
-      acwing 5408 保险箱 <i class="fa fa-chevron-right"></i>
+    <a href="/2024/03/20/dsu/" rel="next" title="并查集">
+      并查集 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -501,7 +510,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">lambda表达式的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">lambda表达式的应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
