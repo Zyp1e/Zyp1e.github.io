@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://vegeone4.tech/2024/12/02/javaweb/</loc>
+    <lastmod>2024-12-18</lastmod>
+  </url>
+  <url>
+    <loc>http://vegeone4.tech/2024/09/22/stable-diffusion/</loc>
+    <lastmod>2024-10-04</lastmod>
+  </url>
+  <url>
+    <loc>http://vegeone4.tech/2024/07/27/computer-network/</loc>
+    <lastmod>2024-08-05</lastmod>
+  </url>
+  <url>
     <loc>http://vegeone4.tech/2024/02/19/git-0/</loc>
     <lastmod>2024-07-06</lastmod>
   </url>
